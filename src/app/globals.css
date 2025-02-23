@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Mada', sans-serif; /* Use Mada font as the primary font */
+}
+
+/* For Mono text, you can use Noto Sans Mono */
+code, pre {
+  font-family: 'Noto Sans Mono', monospace; /* For code blocks or preformatted text */
+}
+
+html, body {
+  overflow-x: hidden;  /* Disables horizontal scrolling */
+  width: 100%; /* Ensures the body does not exceed 100% width */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  box-sizing: border-box; /* Includes padding and borders in element's width and height */
+}
+
+/* Global box-sizing for all elements */
+* {
+  box-sizing: inherit; /* Ensures all elements follow the box-sizing rules */
+}
+
+body {
+  font-family: 'Mada', sans-serif;
+  font-family: "Vazirmatn", sans-serif;
+  direction: rtl;
+  text-align: right;
+}

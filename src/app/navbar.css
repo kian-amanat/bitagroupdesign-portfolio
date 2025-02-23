@@ -1,0 +1,177 @@
+body {
+    font-family: 'Mada', sans-serif; /* Use Mada font as the primary font */
+  }
+  
+  /* For Mono text, you can use Noto Sans Mono */
+  code, pre {
+    font-family: 'Noto Sans Mono', monospace; /* For code blocks or preformatted text */
+  }
+
+  .NavIcon {
+    color: #000000;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center; /* Center the icon horizontally within its container */
+    align-items: center; /* Center the icon vertically within its container */
+    transition: fill 0.3s ease;
+    position: relative; /* Make sure the icon is positioned relative to its parent container */
+    margin-left: auto;
+    margin-right: -350px; /* Push the icon to the right */
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0; /* Ensure navbar is at the top */
+    left: 0; /* Make sure navbar stretches across the page */
+    width: 100%; /* Ensure navbar spans full width */
+    height: 80px;
+    display: flex;
+    background-color: rgb(255, 255, 255); /* White background */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    padding-right: 400px; /* Adjust padding as needed */
+    transition: all 0.4s ease-out;
+    font-family: 'Mada', sans-serif;
+    z-index: 1000;
+    font-family: "Vazirmatn", sans-serif;
+    direction: rtl; /* Right-to-left text */
+    text-align: right; /* Ensure the navbar text is right-aligned */
+  }
+  
+      
+      /* Add padding to the top of the page content to prevent it from hiding under the fixed navbar */
+      body {
+        margin-top: 80px; /* Equal to navbar height */
+      }
+      
+      /* Optional: If you want the navbar to shrink or change style when scrolling */
+      .navbar.scrolled {
+        background-color: rgba(0, 0, 0, 0.543); /* Example: darken navbar when scrolled */
+        color: white;
+      }
+      
+      .navbar.scrolled:hover {
+        transform: scale(1.02);
+      }
+
+
+    .navbar:hover{
+        transform: scale(1.02);
+    }
+
+    a.nav-links{
+        display: flex;
+        color: #000000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+        width: 50%;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        transition: all 0.5s ease-out;
+    }
+
+    a.nav-links a.scrolled-links{
+        display: flex;
+        color: #000000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+        width: 50%;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        transition: all 0.5s ease-out;
+    }
+
+
+    a.nav-links:hover{
+        text-decoration: underline;
+        text-decoration-color: #ffecc4; 
+        text-underline-offset: 10px; 
+        text-decoration-thickness: 2px;
+        transform: translateY(-3px);
+        color: rgb(0, 0, 0);
+    }
+
+
+
+    .NavIcon2{
+        color: #ffffff;
+        width: 16px;
+        margin-top: 0px;
+        height: 16px;
+        margin-right: 20px;
+        }
+
+        .right-side{
+            margin-right: -400px;
+            display: flex;
+            margin-top: -6px;
+            justify-content: space-between;
+            align-items: center;
+            width: 20%;
+        }
+
+
+        .nav-links.text-black {
+            color: black;
+          }
+          
+          /* Color for the links when navbar is scrolled */
+          .nav-links.text-white {
+            color: white;
+          }
+          
+          /* Hover effect for links */
+          .nav-links:hover {
+            color: #ffffff; /* Change text color on hover */
+          }
+
+          @media (max-width: 768px) {
+            .navbar {
+                height: auto;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px; /* Adjusted padding for better fit */
+            }
+        
+            .right-side {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 10px; /* Adds space between items */
+                width: auto; /* Allow it to adjust dynamically */
+                margin-top: 6px;
+                margin-right: 10px;
+            }
+        
+            a.nav-links {
+                font-size: 12px; /* Slightly larger for readability */
+                padding-right: 4px; /* Reduce padding for small screens */
+                text-decoration: none;
+                white-space: nowrap;
+            }
+
+            .NavIcon {
+              margin-right: 10px;
+              margin-top: 15px; /* Apply margin-right only in normal mode */
+            }
+
+        }
+        
+        @media (max-width: 1029px) {
+          a.nav-links {
+            font-size: 12px; /* Slightly larger for readability */
+            padding-right: 4px; /* Reduce padding for small screens */
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        }

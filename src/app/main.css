@@ -1,0 +1,465 @@
+h1{
+    color: bisque;
+}
+@keyframes gradient-vertical-move {
+    0% {
+      background-position: 50% 0%;
+       /* Start from the top */
+    }
+    100% {
+      background-position: 50% 80%; /* Move to the bottom */
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(80px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.title-page {
+    font-size: 150px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -660px;
+    position: relative;
+    margin-left: 20px;
+    background:linear-gradient(180deg, #ffffff,#ffecc4, #dca40d);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 200;
+    animation: slideUp 2.5s ease-out forwards,  gradient-vertical-move 3s linear forwards;
+    opacity: 0; 
+}
+
+  .page {
+    background-color: rgb(255, 255, 255);
+    height: auto; 
+  }
+  
+
+
+.carousel {
+    margin-top: -200px;
+    position: relative;
+    max-width: 100%;
+    border-radius: 1px;
+    margin: auto;
+    overflow: hidden;
+    transition: all 0.9s ease ;
+  }
+
+  .carousel:hover {
+transform: scale(1.02);
+
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    height: 800px;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .carousel-image {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-images.transitioning .carousel-image {
+    opacity: 0.6;
+  }
+  
+  .carousel-images:not(.transitioning) .carousel-image {
+    opacity: 1;
+  }
+  
+  div.dot-nav {
+    position: absolute; /* Keeps it positioned properly in carousel */
+    bottom: 60px; /* Ensures space from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* Adds space between dots */
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .dot.active {
+    background-color: #2f2f2f; 
+  }
+  
+  .dot:hover {
+    background-color: #282828;
+    transform: translateY(-5px); /* Moves dot slightly up on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    div.dot-nav {
+      bottom: 20px; /* Keeps spacing smaller on mobile */
+      gap: 8px; /* Reduce gap between dots */
+    }
+  
+    .dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
+  
+  
+  footer{
+    margin-top: 600px;
+  }
+
+
+/* Define the fade-up animation with a delay */
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start slightly below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Move to the original position */
+    }
+  }
+  
+  /* Class to trigger the fade-up animation */
+  .fade-up {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Starts slightly below */
+    animation: fadeUp 0.5s forwards; /* Apply fade-up animation */
+    animation-delay: 0.5s; /* Adjust delay to your preference */
+  }
+  
+  
+  /* Optional: Add a delay or make it more customizable */
+  .fade-up-container {
+    opacity: 0;
+  }
+
+  /* Project Container */
+.project {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  position: relative;
+  overflow: hidden; /* Ensures the content is well-contained */
+}
+
+/* Project Title */
+.project-title {
+  background: linear-gradient(150deg, #ffffff, #fff0cf, #ffecc4);
+  width: 100%;
+  text-transform: uppercase;
+  color: rgb(87, 87, 87);
+  min-height: 200px; /* Allows flexibility */
+  padding-top: 60px;
+  font-size: 40px;
+  font-weight: 200;
+  margin-top: 405px; /* Increased top space */
+  text-align: center;
+}
+/* Project Image */
+.project-image {
+  width: 100%;
+  height: 700px;
+  margin: 0;
+  margin-top: 0px;
+  padding: 0;
+  transition: all 0.5s ease;
+  opacity: 0.8;
+}
+
+.project-image1 {
+  width: 100%;
+  height: 700px;
+  margin: 0;
+  margin-top: 0px;
+  padding: 0;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.project-image1:hover{
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Project Hover Effects */
+.project:hover .project-image {
+  transform: scale(1.06);
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Project Text */
+.project-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -90%);
+  font-size: 80px;
+  white-space: nowrap;
+  font-weight: 200;
+  color: #ffecc4;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project:hover .project-text {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* More Button (Hidden by Default) */
+button.more-btn {
+  position: absolute;
+  bottom: 270px; /* Adjusted position */
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ffffff, #ffffff);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 36px;
+  font-size: 13px;
+  font-weight: 100;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.5s ease-in-out;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+/* Show More Button on Hover */
+.project:hover .more-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* Button Hover Effect */
+button.more-btn:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ffffff, #fff0cf);
+}
+
+/* Arrow Button */
+button.more-btn .arrow-btn {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Move Arrow on Button Hover */
+button.more-btn:hover .arrow-btn {
+  transform: translateX(5px);
+}
+
+
+footer{
+  margin-top: 0px;
+}
+
+
+.title-pro-page{
+  font-size: 100px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: -500px;
+  position: relative;
+  margin-left: 20px;
+  background:linear-gradient(180deg, #ffffff,#ffecc4, #f0c44b);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 200;
+  animation: slideUp 2.5s ease-out forwards,  gradient-vertical-move 3s linear forwards;
+  opacity: 0; 
+}
+
+.arrow-icon{
+  position: relative;
+  top: 50px;
+  left:600px ;
+  text-transform: uppercase;
+  width: 80px;
+  height: 80px;
+  white-space: nowrap;
+  font-weight: 200;
+  color: #fff0cf;
+  animation: slideUp 2.5s ease-out forwards,  gradient-vertical-move 3s linear forwards;
+  opacity: 0; 
+}
+
+.des-page{
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 400px;
+  position: relative;
+  margin-left: 20px;
+  background:linear-gradient(180deg, #000000,#3d3d3d, #969696);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 200;
+margin-bottom: 100px;
+}
+
+
+.E-icon {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin: 0 auto; /* Ensures it's centered in its container */
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+button.more-btn {
+  position: absolute;
+  bottom: 270px; /* Adjusted position */
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ffffff, #ffffff);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 36px;
+  font-size: 13px;
+  font-weight: 100;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.5s ease-in-out;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  button.more-btn { /* Adjust bottom position for tablet */
+    padding: 10px 30px; /* Smaller padding for tablets */
+    font-size: 12px; /* Adjust font size */
+  }
+}
+
+@media (max-width: 768px) {
+  button.more-btn {
+    bottom: 180px; /* Adjust bottom position for mobile */
+    padding: 8px 24px; /* Smaller padding for mobile */
+    font-size: 11px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  button.more-btn {
+    margin-top: 2000px;
+    bottom: 10px; /* Adjust bottom position for very small screens */
+    padding: 6px 10px; /* Further reduce padding for smaller mobile devices */
+    font-size: 10px; /* Adjust font size */
+  }
+}
+
+
+@media (max-width: 768px) {
+
+
+  
+  .title-page, .title-pro-page {
+    font-size: 50px;
+    margin-top: -280px;
+    margin-bottom: 205px;
+    text-align: center;
+  }
+
+  .des-page {
+    font-size: 20px;
+    margin-top: 200px;
+    text-align: center;
+  }
+
+  .arrow-icon {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.project-title {
+  padding-top: 55px;
+  font-size: 17px;
+  margin-top: 20px; /* Less top space for smaller screens */
+  min-height: 150px;
+  white-space: nowrap;
+}
+
+@media (min-width: 769px) {
+  .project-title {
+    margin-top: 400px !important; /* Reinforce desktop top space */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-text {
+    font-size: 30px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .project-image, .project-image1 {
+    height: auto;
+  }
+
+  .project:hover .project-text {
+    transform: translate(-50%, -40%);
+  }
+
+  button.more-btn {
+    bottom: 100px;
+  }
+}
+
