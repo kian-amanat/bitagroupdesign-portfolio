@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import "./main.css"; // Assuming your styles are here
+import "./main.css";
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,9 +31,9 @@ const Carousel = ({ images }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (!transitioning) nextImage();
-    }, 5000); // 3000ms = 3 seconds for smooth interval switch
+    }, 5000); // 5000ms = 5 seconds for smooth interval switch
     return () => clearInterval(intervalId);
-  }, [transitioning, images.length]); // Dependency added to trigger when transitioning changes
+  }, [transitioning, images.length]);
 
   useEffect(() => {
     if (transitioning) {
@@ -53,8 +53,8 @@ const Carousel = ({ images }) => {
           <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            width={1400}
-            height={800}
+            width={images[currentIndex].width} // Correct usage of width
+            height={images[currentIndex].height} // Correct usage of height
             priority={true}
           />
         </div>

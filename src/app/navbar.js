@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./navbar.css";
+import Head from "next/head";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,6 +22,15 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <Head>
+        {{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Home Design Portfolio",
+          description:
+            "A portfolio showcasing high-end home designs and architecture projects.",
+        }}
+      </Head>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"

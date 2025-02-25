@@ -17,12 +17,12 @@ const Footer = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "گروه طراحی بیتا",
-            url: "https://yourwebsite.com",
+            url: "https://bitagroupdesign.com",
             logo: "https://yourwebsite.com/logo.png",
             sameAs: [
               "https://facebook.com/yourpage",
               "https://twitter.com/yourpage",
-              "https://instagram.com/yourpage",
+              "https://www.instagram.com/bitaa.group?igsh=MWhjNmZ2NDE3MWNhNw==",
               "https://t.me/yourchannel",
               "https://wa.me/yourphonenumber",
             ],
@@ -111,7 +111,7 @@ const Footer = () => {
                 <FaTelegram size={30} />
               </a>
               <a
-                href="https://instagram.com/yourprofile"
+                href="https://www.instagram.com/bitaa.group?igsh=MWhjNmZ2NDE3MWNhNw=="
                 className="hover:text-[#ffecc4] transition flex items-center"
                 aria-label="Instagram"
               >
@@ -148,14 +148,14 @@ const Footer = () => {
         </h2>
         <div className="flex justify-center space-x-6">
           <a
-            href="https://github.com/yourgithub"
+            href="https://github.com/kian-amanat"
             className="hover:text-[#ffecc4] transition ml-5"
             aria-label="GitHub"
           >
             <FaGithub size={30} />
           </a>
           <a
-            href="https://linkedin.com/in/yourlinkedin"
+            href="https://www.linkedin.com/in/kian-amanat-55379627b/"
             className="hover:text-[#ffecc4] transition"
             aria-label="LinkedIn"
           >

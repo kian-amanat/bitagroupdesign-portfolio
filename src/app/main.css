@@ -391,9 +391,9 @@ button.more-btn {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 410px) {
   button.more-btn {
-    margin-top: 2000px;
+
     bottom: 10px; /* Adjust bottom position for very small screens */
     padding: 6px 10px; /* Further reduce padding for smaller mobile devices */
     font-size: 10px; /* Adjust font size */
@@ -407,8 +407,8 @@ button.more-btn {
   
   .title-page, .title-pro-page {
     font-size: 50px;
-    margin-top: -280px;
-    margin-bottom: 205px;
+    margin-top: -180px;
+    margin-bottom: 105px;
     text-align: center;
   }
 
@@ -458,8 +458,21 @@ button.more-btn {
     transform: translate(-50%, -40%);
   }
 
+p.des-page{
+  margin-top: 0px;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+h3.title-pro-page{
+margin-top: -220px;
+
+
+}
+
   button.more-btn {
-    bottom: 100px;
+bottom: 50px;
   }
+
+
 }
 

@@ -8,16 +8,26 @@ import VideoComponent from "./videoComponenet";
 import Carousel from "./slider";
 import Projects from "./project";
 import Footer from "./footer";
+import Head from "next/head";
 
 export default function Home() {
   const images = [
-    { src: "/bg11.jpg", alt: "Image 1 description" },
-    { src: "/bg.jpg", alt: "Image 2 description" },
-    { src: "/bg88.jpg", alt: "Image 3 description" },
-    { src: "/bg9.jpg", alt: "Image 4 description" },
+    { src: "/bg11.jpg", alt: "Image 1 description", width: 1920, height: 1080 },
+    { src: "/bg2.jpg", alt: "Image 2 description", width: 1920, height: 1080 },
+    { src: "/bg18.jpg", alt: "Image 3 description", width: 1920, height: 1080 },
+    { src: "/bg19.jpg", alt: "Image 4 description", width: 1920, height: 1080 },
   ];
   return (
     <div className="page">
+      <Head>
+        {{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Home Design Portfolio",
+          description:
+            "A portfolio showcasing high-end home designs and architecture projects.",
+        }}
+      </Head>
       <header>
         <Navbar />
       </header>
