@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import FadeUpText from "./fadeUpText";
 import "./main.css";
 import Navbar from "./navbar";
-import VideoComponent from "./videoComponenet";
 import Carousel from "./slider";
 import Projects from "./project";
 import Footer from "./footer";
