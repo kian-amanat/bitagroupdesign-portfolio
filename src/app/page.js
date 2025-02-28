@@ -1,12 +1,15 @@
 "use client";
 
-import FadeUpText from "./fadeUpText";
-import "./main.css";
-import Navbar from "./navbar";
-import Carousel from "./slider";
-import Projects from "./project";
-import Footer from "./footer";
+import dynamic from "next/dynamic";
 import Head from "next/head";
+import "./main.css";
+
+// Dynamically import components
+const FadeUpText = dynamic(() => import("./fadeUpText"));
+const Navbar = dynamic(() => import("./navbar"));
+const Carousel = dynamic(() => import("./slider"));
+const Projects = dynamic(() => import("./project"));
+const Footer = dynamic(() => import("./footer"));
 
 export default function Home() {
   const images = [

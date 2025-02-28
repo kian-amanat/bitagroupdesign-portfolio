@@ -42,6 +42,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="twitter:image" content="/preview-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
+        <title>Home Design Portfolio | Bita Group Design</title>
       </head>
       <body className={vazirmatn.className}>{children}</body>
     </html>
