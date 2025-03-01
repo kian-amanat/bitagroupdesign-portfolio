@@ -1,9 +1,9 @@
-import { Vazirmatn } from "next/font/google";
-import "./globals.css"; // Your global styles
+import { Vazirmatn as Vazirmatn_Font } from "next/font/google";
+import "./globals.css"; // Global styles
 
-const vazirmatn = Vazirmatn({
-  subsets: ["arabic"], // Includes Persian/Arabic glyphs
-  weight: ["400", "700"], // Choose the required font weights
+const vazirmatn = Vazirmatn_Font({
+  subsets: ["latin-ext"], // Includes Persian glyphs
+  weight: ["400", "700"], // Specify font weights
   display: "swap",
 });
 

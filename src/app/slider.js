@@ -53,9 +53,12 @@ const Carousel = ({ images }) => {
           <Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            width={images[currentIndex].width} // Correct usage of width
-            height={images[currentIndex].height} // Correct usage of height
-            priority={true}
+            width={images[currentIndex].width}
+            height={images[currentIndex].height}
+            priority // Loads the first image faster
+            quality={80} // Reduces file size without losing quality
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1280px"
+            style={{ objectFit: "cover" }} // Prevents layout shifts
           />
         </div>
       </div>

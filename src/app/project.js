@@ -57,8 +57,10 @@ export default function Projects() {
                 width={1280}
                 height={960}
                 className="project-image"
-                layout="intrinsic" // Keeps aspect ratio
-                srcSet={`${project.image}?w=480&h=360&fit=crop 480w, ${project.image}?w=800&h=600&fit=crop 800w, ${project.image}?w=1280&h=960&fit=crop 1280w`}
+                fill
+                priority
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1280px"
               />
               <h3 className="project-text">{project.title}</h3>
               {/* <p>{project.description}</p> */}
