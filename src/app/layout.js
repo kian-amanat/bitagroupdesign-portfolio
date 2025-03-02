@@ -1,8 +1,9 @@
 import { Vazirmatn as Vazirmatn_Font } from "next/font/google";
+import Script from "next/script"; // Import Next.js Script for optimized loading
 import "./globals.css"; // Global styles
 
 const vazirmatn = Vazirmatn_Font({
-  subsets: ["latin-ext"], // Includes Persian glyphs
+  subsets: ["arabic"], // Corrected for Persian/Arabic support
   weight: ["400", "700"], // Specify font weights
   display: "swap",
 });
@@ -22,6 +23,15 @@ export default function RootLayout({ children }) {
           content="home design, architecture, portfolio, Bita Group Design, high-end projects"
         />
         <meta name="author" content="Kian Amanat" />
+
+        {/* Preconnect to Google Fonts to improve performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
         <meta
           property="og:title"
           content="Home Design Portfolio | Bita Group Design"
@@ -44,7 +54,23 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <title>Home Design Portfolio | Bita Group Design</title>
       </head>
-      <body className={vazirmatn.className}>{children}</body>
+      <body className={vazirmatn.className}>
+        {children}
+
+        {/* ✅ Load global scripts efficiently */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'YOUR_TRACKING_ID');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

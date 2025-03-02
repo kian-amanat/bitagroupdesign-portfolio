@@ -89,7 +89,6 @@ transform: scale(1.02);
     position: absolute; /* Keeps it positioned properly in carousel */
     bottom: 60px; /* Ensures space from the bottom */
     left: 50%;
-    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     gap: 12px; /* Adds space between dots */
@@ -98,19 +97,18 @@ transform: scale(1.02);
   .dot {
     width: 10px;
     height: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.709);
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
   
   .dot.active {
-    background-color: #2f2f2f; 
+    background-color: #2f2f2f41; 
   }
   
   .dot:hover {
-    background-color: #282828;
-    transform: translateY(-5px); /* Moves dot slightly up on hover */
+    background-color: #2828288c;
   }
   
   /* Responsive adjustments */

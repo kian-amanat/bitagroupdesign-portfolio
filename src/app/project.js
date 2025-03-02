@@ -57,7 +57,7 @@ export default function Projects() {
                 width={1280}
                 height={960}
                 className="project-image"
-                priority
+                priority={false}
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1280px"
               />

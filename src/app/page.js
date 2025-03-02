@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Script from "next/script"; // Import Next.js Script for page-specific scripts
 import Head from "next/head";
 import "./main.css";
 
@@ -54,6 +55,7 @@ export default function Home() {
         <meta name="twitter:image" content="/preview-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
       <header>
         <Navbar />
       </header>
@@ -74,6 +76,17 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
+
+      {/* ✅ Page-Specific Scripts */}
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        strategy="lazyOnload"
+      />
+      <Script id="custom-script" strategy="lazyOnload">
+        {`
+          console.log("Page-specific script loaded!");
+        `}
+      </Script>
     </div>
   );
 }
