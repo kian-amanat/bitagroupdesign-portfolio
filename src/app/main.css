@@ -25,10 +25,10 @@ h1{
     font-size: 150px;
     font-weight: 600;
     text-align: center;
-    margin-top: -660px;
+    margin-top: -630px;
     position: relative;
     margin-left: 20px;
-    background:linear-gradient(180deg, #ffffff,#ffecc4, #dca40d);
+    background:linear-gradient(180deg, #fcedd0,#ffe5ae, #a07809);
     background-size: 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -226,7 +226,7 @@ transform: scale(1.02);
   font-size: 80px;
   white-space: nowrap;
   font-weight: 200;
-  color: #ffecc4;
+  color: #ffdc90;
   opacity: 0; /* Initially hidden */
   transition: opacity 0.5s ease, transform 0.5s ease;
 }

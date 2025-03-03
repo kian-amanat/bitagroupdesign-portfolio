@@ -8,10 +8,12 @@ body {
   }
 
   .NavIcon {
-    color: #000000;
+    white-space: nowrap;
     width: 36px;
     height: 36px;
+    font-size: 20px;
     display: flex;
+    font-weight: 400;
     justify-content: center; /* Center the icon horizontally within its container */
     align-items: center; /* Center the icon vertically within its container */
     transition: fill 0.3s ease;
