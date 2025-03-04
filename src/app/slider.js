@@ -57,6 +57,8 @@ const Carousel = ({ images }) => {
             height={images[currentIndex].height}
             priority // Loads the first image faster
             quality={80} // Reduces file size without losing quality
+            placeholder="blur" // ✅ Loads a low-quality version first
+            blurDataURL={images[currentIndex].blurDataURL} // ✅ Use a base64 tiny image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1280px"
             style={{ objectFit: "cover" }} // Prevents layout shifts
           />
