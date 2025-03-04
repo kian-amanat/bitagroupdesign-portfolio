@@ -1,5 +1,6 @@
 import { Vazirmatn as Vazirmatn_Font } from "next/font/google";
 import Script from "next/script";
+import Head from "next/head"; // ✅ Use Next.js Head for better optimization
 import "./globals.css";
 
 const vazirmatn = Vazirmatn_Font({
@@ -11,7 +12,7 @@ const vazirmatn = Vazirmatn_Font({
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <head>
+      <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -24,18 +25,29 @@ export default function RootLayout({ children }) {
         />
         <meta name="author" content="Kian Amanat" />
 
-        {/* ✅ Preload LCP Image for Faster Rendering */}
-        <link rel="preload" as="image" href="/bg11.jpg" />
-
-        {/* ✅ Preload Google Fonts for Performance */}
+        {/* ✅ Preload LCP Image with Correct Format */}
         <link
           rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
+          as="image"
+          href="/bg2.jpg"
+          type="image/webp"
+          fetchpriority="high"
+        />
+
+        {/* ✅ Preload Google Fonts Efficiently */}
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin="anonymous"
         />
         <link
-          rel="stylesheet"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
+          rel="stylesheet"
         />
 
         {/* ✅ Open Graph & SEO */}
@@ -59,8 +71,9 @@ export default function RootLayout({ children }) {
         />
         <meta name="twitter:image" content="/preview-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
+
         <title>Home Design Portfolio | Bita Group Design</title>
-      </head>
+      </Head>
       <body className={vazirmatn.className}>
         {children}
 

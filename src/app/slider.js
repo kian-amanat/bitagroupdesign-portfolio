@@ -55,12 +55,13 @@ const Carousel = ({ images }) => {
             alt={images[currentIndex].alt}
             width={images[currentIndex].width}
             height={images[currentIndex].height}
-            priority // Loads the first image faster
-            quality={80} // Reduces file size without losing quality
-            placeholder="blur" // ✅ Loads a low-quality version first
-            blurDataURL={images[currentIndex].blurDataURL} // ✅ Use a base64 tiny image
+            priority // ✅ Loads image before others
+            decoding="async" // ✅ Makes browser paint it faster
+            quality={75} // ✅ Reduces size more while keeping quality
+            placeholder="blur" // ✅ Faster initial load
+            blurDataURL={images[currentIndex].blurDataURL}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1280px"
-            style={{ objectFit: "cover" }} // Prevents layout shifts
+            style={{ objectFit: "cover" }}
           />
         </div>
       </div>
