@@ -1,16 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,jsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        cream: "#f3eee6",
+        sand: "#e6ddd0",
+        ink: "#12100e",
+        coal: "#1b1815",
+        brass: "#c9a46a",
       },
+      fontFamily: { sans: ["var(--font-vazir)", "system-ui", "sans-serif"] },
+      transitionTimingFunction: { expo: "cubic-bezier(0.16, 1, 0.3, 1)" },
     },
   },
   plugins: [],

@@ -1,95 +1,45 @@
-import { Vazirmatn as Vazirmatn_Font } from "next/font/google";
-import Script from "next/script";
+import { Vazirmatn } from "next/font/google";
 import "./globals.css";
+import Providers from "@/components/Providers";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { site } from "@/lib/site";
 
-const vazirmatn = Vazirmatn_Font({
-  subsets: ["arabic"],
-  weight: ["400", "700"],
+const vazir = Vazirmatn({
+  subsets: ["arabic", "latin"],
+  variable: "--font-vazir",
   display: "swap",
 });
 
+export const metadata = {
+  metadataBase: new URL(site.url),
+  title: { default: `${site.name} | طراحی و بازسازی`, template: `%s | ${site.name}` },
+  description: site.description,
+  keywords: ["طراحی داخلی", "بازسازی خانه", "نجاری", "برق‌کاری", "لوله‌کشی", "سرامیک", "نقاشی ساختمان", "بیتا", "Bita Group Design"],
+  authors: [{ name: site.developer.name }],
+  openGraph: {
+    type: "website",
+    locale: "fa_IR",
+    url: site.url,
+    siteName: site.name,
+    title: `${site.name} | طراحی و بازسازی`,
+    description: site.description,
+  },
+  twitter: { card: "summary_large_image", title: site.name, description: site.description },
+  alternates: { canonical: "/" },
+};
+
+export const viewport = { themeColor: "#12100e", width: "device-width", initialScale: 1 };
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir="rtl">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="A portfolio showcasing high-end home designs and architecture projects by Bita Group Design."
-        />
-        <meta
-          name="keywords"
-          content="home design, architecture, portfolio, Bita Group Design, high-end projects"
-        />
-        <meta name="author" content="Kian Amanat" />
-
-        {/* ✅ Correctly Set Title */}
-        <title>Home Design Portfolio | Bita Group Design</title>
-
-        {/* ✅ Preload LCP Image */}
-        <link
-          rel="preload"
-          as="image"
-          href="/bg2.jpg"
-          type="image/webp"
-          fetchpriority="high"
-        />
-
-        {/* ✅ Preload Google Fonts */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-
-        {/* ✅ Open Graph & SEO */}
-        <meta
-          property="og:title"
-          content="Home Design Portfolio | Bita Group Design"
-        />
-        <meta
-          property="og:description"
-          content="Explore high-end home design projects and architecture work by Bita Group Design."
-        />
-        <meta property="og:image" content="/preview-image.jpg" />
-        <meta property="og:url" content="https://bitagroupdesign.com" />
-        <meta
-          name="twitter:title"
-          content="Home Design Portfolio | Bita Group Design"
-        />
-        <meta
-          name="twitter:description"
-          content="Explore high-end home design projects and architecture work by Bita Group Design."
-        />
-        <meta name="twitter:image" content="/preview-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </head>
-      <body className={vazirmatn.className}>
-        {children}
-
-        {/* ✅ Load Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'YOUR_TRACKING_ID');
-          `}
-        </Script>
+    <html lang="fa" dir="rtl" className={vazir.variable}>
+      <body className="font-sans">
+        <Providers>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
